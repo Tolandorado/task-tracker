@@ -24,5 +24,5 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE $VITE_FRONTEND_PORT
 
-CMD [ "nginx", "-g", "daemon off;" ]
+# CMD [ "nginx", "-g", "daemon off;" ]
 # CMD ["/bin/sh", "-c", "envsubst < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
