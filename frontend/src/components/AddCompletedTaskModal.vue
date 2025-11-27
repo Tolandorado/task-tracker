@@ -1,29 +1,3 @@
-<template>
-  <div v-if="isVisible" class="modal-overlay">
-    <div class="modal-content">
-      <h2>Add Completed Task</h2>
-      <form @submit.prevent="submitTask">
-        <div class="form-group">
-          <label for="description">Description:</label>
-          <input type="text" id="description" v-model="task.description" required />
-        </div>
-        <div class="form-group">
-          <label for="start_at">Start Time:</label>
-          <input type="time" id="start_at" v-model="task.start_at" step="1" required />
-        </div>
-        <div class="form-group">
-          <label for="end_at">End Time:</label>
-          <input type="time" id="end_at" v-model="task.end_at" step="1" required />
-        </div>
-        <div class="modal-actions">
-          <button type="submit">Add Task</button>
-          <button type="button" @click="closeModal">Cancel</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, defineProps, defineEmits, watch } from 'vue';
 
@@ -82,6 +56,32 @@ const submitTask = () => {
   }
 };
 </script>
+
+<template>
+  <div v-if="isVisible" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Add Completed Task</h2>
+      <form @submit.prevent="submitTask">
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" id="description" v-model="task.description" required />
+        </div>
+        <div class="form-group">
+          <label for="start_at">Start Time:</label>
+          <input type="time" id="start_at" v-model="task.start_at" step="1" required />
+        </div>
+        <div class="form-group">
+          <label for="end_at">End Time:</label>
+          <input type="time" id="end_at" v-model="task.end_at" step="1" required />
+        </div>
+        <div class="modal-actions">
+          <button type="submit">Add Task</button>
+          <button type="button" @click="closeModal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .modal-overlay {

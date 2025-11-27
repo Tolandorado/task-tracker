@@ -1,14 +1,4 @@
-<template>
-  <div class="task-input">
-    <input
-      type="text"
-      v-model="newTaskDescription"
-      @keyup.enter="addTask"
-      placeholder="What are you working on?"
-    />
-    <button @click="addTask">Start</button>
-  </div>
-</template>
+
 
 <script setup lang="ts">
 import { ref, defineEmits } from 'vue';
@@ -23,6 +13,18 @@ const addTask = () => {
   }
 };
 </script>
+
+<template>
+  <div class="task-input">
+    <input
+      type="text"
+      v-model="newTaskDescription"
+      @keyup.enter="addTask"
+      placeholder="What are you working on?"
+    />
+    <button @click="addTask">Start</button>
+  </div>
+</template>
 
 <style scoped>
 .task-input {
